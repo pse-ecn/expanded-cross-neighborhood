@@ -1,4 +1,4 @@
-function evalRerankingForFeatures(querymat, queryLab, queryCam, testmat, testLab, testCam)
+function evalECNRerankingForFeatures(querymat, queryLab, queryCam, testmat, testLab, testCam)
     noRerankingDist = pdist2(testmat, querymat, 'cosine'); % you can use euclidian here, if yor features are normalized
     [resultNoRerankingRanks, resultNoRerankingMap, ~, ~] = evaluation(noRerankingDist, testLab, queryLab, testCam, queryCam);
     

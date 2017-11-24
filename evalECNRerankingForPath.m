@@ -1,4 +1,4 @@
-function evalRerankingForPath(evalPath)
+function evalECNRerankingForPath(evalPath)
     querymat=csvread([evalPath '/query/features.csv']);
     queryLab=csvread([evalPath '/query/labels.csv']);
     queryCam=csvread([evalPath '/query/cameras.csv']);
