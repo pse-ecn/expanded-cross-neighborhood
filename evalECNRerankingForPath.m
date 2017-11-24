@@ -7,5 +7,5 @@ function evalECNRerankingForPath(evalPath)
     testLab=csvread([evalPath '/test/labels.csv']);
     testCam=csvread([evalPath '/test/cameras.csv']);  
     
-    evalRerankingForFeatures(querymat, queryLab, queryCam, testmat, testLab, testCam);
+    evalECNRerankingForFeatures(querymat, queryLab, queryCam, testmat, testLab, testCam);
 end
