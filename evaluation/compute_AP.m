@@ -1,4 +1,6 @@
-%% This function is from https://github.com/zhunzhong07/person-re-ranking by Zhong et al.
+%% This function is the original market evaluation function from
+%% https://github.com/zhunzhong07/IDE-baseline-Market-1501/blob/master/market_evaluation/utils/compute_AP.m 
+%% by Zheng et al.
 
 function [ap, cmc] = compute_AP(good_image, junk_image, index)
 

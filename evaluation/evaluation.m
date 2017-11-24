@@ -1,4 +1,5 @@
-%% This function is from https://github.com/zhunzhong07/person-re-ranking by Zhong et al.
+%% This function is from https://github.com/zhunzhong07/person-re-ranking/blob/master/evaluation/utils/evaluation.m
+%% by Zhong et al.
 
 function [CMC, map, r1_pairwise, ap_pairwise] = evaluation(dist, label_gallery, label_query, cam_gallery, cam_query)
 
