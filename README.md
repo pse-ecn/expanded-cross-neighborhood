@@ -2,7 +2,7 @@
 
 In this repository, we provide the reranking code used for our paper **A Pose-Sensitive Embedding for Person Re-Identification with Expanded Cross Neighborhood Re-Ranking**. 
 
-This includes our Expanded Cross Neighborhood Re-Ranking Matlab code. The training code for our [Expanded Cross Neighborhood]() (TODO add link) is located in a separate repository.
+This includes our Expanded Cross Neighborhood Re-Ranking Matlab code. The training code for our [Pose Sensitive Embedding Model](https://github.com/pse-ecn/pose-sensitive-embedding) is located in a separate repository.
 
 If you find our work helpful in your research, please cite:
 
@@ -16,7 +16,7 @@ arxiv 2017
 
 ### Usage of Expanded Cross Neighborhood Re-ranking
 
-Our implementation of ECN can be found in the file [ECN_rerank]() (TODO link). The script can be called with default parameters in the following way to calculate the re-ranked distance for a query and a test set.
+Our implementation of ECN can be found in the file [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m). The script can be called with default parameters in the following way to calculate the re-ranked distance for a query and a test set.
 
 ```
 ECN_dist= ECN_rerank(queryset, testset);
