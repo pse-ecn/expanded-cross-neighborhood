@@ -9,7 +9,7 @@ If you find our work helpful in your research, please cite:
 ``` 
 M. Saquib Sarfraz, Arne Schumann, Andreas Eberle, Ranier Stiefelhagen,
 "A Pose Sensitive Embedding for Person Re-Identification with Exapanded Cross Neighborhood Re-Ranking", 
-arxiv 2017
+https://arxiv.org/abs/1711.10378 2017
 ``` 
 
 
@@ -42,5 +42,16 @@ Our ECN_rerank script expects the query and testsets in the following format:
 
 * queryset: probe matrix (#_of_probes x feature_dimension);  feature vectors in rows
 * testset = gallery matrix (#_of_gallery_images x feature_dimension); feature vectors in rows
+
+### Evaluation
+
+You can download tour PSE model's features for the Market-1501 and Duke datasets here
+
+https://drive.google.com/open?id=1uyTMejyhpkPD8L-v8JJ9JOECrEIYZPCI
+
+You can then run the evaluation by setting the evalPath to your download features folder in the function [evalECNRerankingForPath](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/evalECNRerankingForPath.m).
+
+If you would like to test our ECN reranking on your own features , you can directly use the [evalECNRerankingForFeatures](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/evalECNRerankingForFeatures.m) or directly the main [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m). 
+
 
 
