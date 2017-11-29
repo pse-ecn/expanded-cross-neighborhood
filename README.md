@@ -1,6 +1,6 @@
 # Expanded Cross Neighborhood distance based Re-ranking (ECN)
 
-In this repository, we provide the reranking code used for our paper **A Pose-Sensitive Embedding for Person Re-Identification with Expanded Cross Neighborhood Re-Ranking**. 
+In this repository, we provide the reranking and evaluation code used for our paper **A Pose-Sensitive Embedding for Person Re-Identification with Expanded Cross Neighborhood Re-Ranking**. 
 
 This includes our Expanded Cross Neighborhood Re-Ranking Matlab code. The training code for our [Pose Sensitive Embedding Model](https://github.com/pse-ecn/pose-sensitive-embedding) is located in a separate repository.
 
