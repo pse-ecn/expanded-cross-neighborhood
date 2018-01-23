@@ -80,7 +80,7 @@ ECN_dist=squeeze(mean([q_nbr_dist;t_nbr_dist]));  %%%final ECN distance: average
 %%
 function Rank_dist=get_rank_dist(initial_rank,k)
 [~,pos_L1]=sort(initial_rank, 2,'ascend'); 
-fac_1=(max(0,(k+1- pos_L1)));
+fac_1=sparse(max(0,(k+1- pos_L1)));
 Rank_dist = fac_1*fac_1';
 %convert the similarites to distance
  Rank_dist=min_max_norm(Rank_dist);
@@ -88,8 +88,8 @@ Rank_dist = fac_1*fac_1';
 end
 
 function [mat]=min_max_norm(mat)
-   mat= bsxfun(@minus,mat,min(mat,[],2)); %subtract each row min from each row
    max_mat=max(mat,[],2); min_mat=min(mat,[],2); % geting max and min 
+   mat= bsxfun(@minus,mat,min_mat); %subtract each row min from each row
    max_min=max_mat-min_mat;
    mat=bsxfun(@rdivide,mat,max_min);
 end
