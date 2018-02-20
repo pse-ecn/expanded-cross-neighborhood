@@ -21,7 +21,7 @@ function ECN_dist= ECN_rerank(queryset, testset, varargin)
 %
 % M. Saquib Sarfraz, Arne Schumann, Andreas Eberle, Ranier Stiefelhagen, " A
 % Pose Sensitive Embedding for Person Re-Identification with Exapanded Cross
-% Neighborhood Re-Ranking", arxiv 2017
+% Neighborhood Re-Ranking", https://arxiv.org/abs/1711.10378 2017. CVPR 2018.
 
 
 %%
