@@ -16,19 +16,25 @@ https://arxiv.org/abs/1711.10378 2017. [accepted at CVPR 2018]
 
 ### Usage of Expanded Cross Neighborhood Re-ranking
 
-Our implementation of ECN can be found in the file [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m). The script can be called with default parameters in the following way to calculate the re-ranked distance for a query and a test set.
-
+Our matlab implementation of ECN can be found in the file [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m) and python implementation can be found in [ecn.py]. 
+The script can be called with default parameters in the following way to calculate the re-ranked distance for a query and a test set.
+### Matlab usage
 ```
 ECN_dist= ECN_rerank(queryset, testset);
 ```
-
+### Python Usage:
+...
+python3 ecn.py --queryset=path-to-your-query-features-csv-file --testset=path-to-your-test-features-csv-file --outputpath=path-to-write-ECN-distance
+...
 This will run ECN with the default parameters `k=25`, `t=3`, `q=8` and `method=rankdist`. The returned `ECN_dist` can then be used to calculate the scores.
 
 #### ECN Parameters
 Alternatively, you can also supply different values for these parameters by running it like
 
 ```
-ECN_dist= ECN_rerank(queryset, testset, 'k',25, 't',3, 'q',8, 'method','rankdist')
+ECN_dist= ECN_rerank(queryset, testset, 'k',25, 't',3, 'q',8, 'method','rankdist') (Matlab)
+
+python3 ecn.py --queryset=path-to-your-query-features-csv-file --testset=path-to-your-test-features-csv-file --outputpath=path-to-write-ECN-distance --method='rankdist' --k=25 --t=3 --q=8]  (Python)
 ```
 
 Supported values for parameter `method` are:
