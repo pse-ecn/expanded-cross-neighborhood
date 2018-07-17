@@ -16,7 +16,7 @@ https://arxiv.org/abs/1711.10378 2017. [accepted at CVPR 2018]
 
 ### Usage of Expanded Cross Neighborhood Re-ranking
 
-Our matlab implementation of ECN can be found in the file [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m) and python implementation can be found in [ecn.py]. 
+Our matlab implementation of ECN can be found in the file [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m) and python implementation can be found in [ecn.py](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ecn.py). 
 The script can be called with default parameters in the following way to calculate the re-ranked distance for a query and a test set.
 ### Matlab usage
 ```
