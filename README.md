@@ -23,9 +23,9 @@ The script can be called with default parameters in the following way to calcula
 ECN_dist= ECN_rerank(queryset, testset);
 ```
 ### Python Usage:
-...
+```
 python3 ecn.py --queryset=path-to-your-query-features-csv-file --testset=path-to-your-test-features-csv-file --outputpath=path-to-write-ECN-distance
-...
+```
 This will run ECN with the default parameters `k=25`, `t=3`, `q=8` and `method=rankdist`. The returned `ECN_dist` can then be used to calculate the scores.
 
 #### ECN Parameters
