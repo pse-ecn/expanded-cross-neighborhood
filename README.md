@@ -53,7 +53,7 @@ Our ECN_rerank script expects the query and testsets in the following format:
 
 You can download our PSE model's features for the Market-1501 and Duke datasets here
 
-https://drive.google.com/open?id=1uyTMejyhpkPD8L-v8JJ9JOECrEIYZPCI
+https://drive.google.com/drive/folders/18eZlJIB5_WZ0tAa_SLbMJqxQS3C_76wh?usp=sharing
 
 You can then run the evaluation by setting the evalPath to your download features folder in the function [evalECNRerankingForPath](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/evalECNRerankingForPath.m).
 
