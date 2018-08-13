@@ -34,7 +34,7 @@ Alternatively, you can also supply different values for these parameters by runn
 ```
 ECN_dist= ECN_rerank(queryset, testset, 'k',25, 't',3, 'q',8, 'method','rankdist') (Matlab)
 
-python3 ecn.py --queryset=path-to-your-query-features-csv-file --testset=path-to-your-test-features-csv-file --outputpath=path-to-write-ECN-distance --method='rankdist' --k=25 --t=3 --q=8]  (Python)
+python3 ecn.py --queryset=path-to-your-query-features-csv-file --testset=path-to-your-test-features-csv-file --outputpath=path-to-write-ECN-distance --method='rankdist' --k=25 --t=3 --q=8  (Python)
 ```
 
 Supported values for parameter `method` are:
