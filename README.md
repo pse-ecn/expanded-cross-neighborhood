@@ -1,18 +1,19 @@
 # Expanded Cross Neighborhood distance based Re-ranking (ECN)
 
-In this repository, we provide the code for our ECN re-ranking method described in our paper **A Pose-Sensitive Embedding for Person Re-Identification with Expanded Cross Neighborhood Re-Ranking**. 
+In this repository, we provide the code for our ECN re-ranking method described in our CVPR2018 paper **A Pose-Sensitive Embedding for Person Re-Identification with Expanded Cross Neighborhood Re-Ranking**. [paper](http://openaccess.thecvf.com/content_cvpr_2018/papers/Sarfraz_A_Pose-Sensitive_Embedding_CVPR_2018_paper.pdf).
 
-This includes our Expanded Cross Neighborhood Re-Ranking Matlab and Python code. 
+This repo includes both Python and Matlab code of our Expanded Cross Neighborhood Re-Ranking. 
 
 If you find our work helpful in your research, please cite:
 
 ``` 
-M. Saquib Sarfraz, Arne Schumann, Andreas Eberle, Ranier Stiefelhagen,
-"A Pose Sensitive Embedding for Person Re-Identification with Exapanded Cross Neighborhood Re-Ranking", 
- http://openaccess.thecvf.com/content_cvpr_2018/papers/Sarfraz_A_Pose-Sensitive_Embedding_CVPR_2018_paper.pdf. CVPR 2018
+@inproceedings{finch,
+    author    = {M. Saquib Sarfraz, Arne Schumann, Andreas Eberle, Ranier Stiefelhagen}, 
+    title     = {A Pose Sensitive Embedding for Person Re-Identification with Exapanded Cross Neighborhood Re-Ranking}, 
+    booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year  = {2018}
+}
 ``` 
-
-
 
 ### Usage of Expanded Cross Neighborhood Re-ranking
 
