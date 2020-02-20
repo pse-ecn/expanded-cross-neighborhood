@@ -7,7 +7,7 @@ This repo includes both Python and Matlab code of our Expanded Cross Neighborhoo
 If you find our work helpful in your research, please cite:
 
 ``` 
-@inproceedings{finch,
+@inproceedings{ECN,
     author    = {M. Saquib Sarfraz, Arne Schumann, Andreas Eberle, Ranier Stiefelhagen}, 
     title     = {A Pose Sensitive Embedding for Person Re-Identification with Exapanded Cross Neighborhood Re-Ranking}, 
     booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
