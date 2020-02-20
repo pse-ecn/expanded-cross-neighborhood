@@ -21,7 +21,7 @@ function ECN_dist= ECN_rerank(queryset, testset, varargin)
 %
 % M. Saquib Sarfraz, Arne Schumann, Andreas Eberle, Ranier Stiefelhagen, " A
 % Pose Sensitive Embedding for Person Re-Identification with Exapanded Cross
-% Neighborhood Re-Ranking", https://arxiv.org/abs/1711.10378 2017. CVPR 2018.
+% Neighborhood Re-Ranking", CVPR 2018
 
 
 %%
@@ -31,22 +31,23 @@ k= ECN_param.Results.k; t= ECN_param.Results.t; q=ECN_param.Results.q; method=EC
 
 
 nQuery=size(queryset,1); ntest=size(testset,1);
-mat=[queryset ; testset];
+mat= [queryset ; testset];
 
+%orig_dist= fast_euc_dist(mat);
 orig_dist=pdist2(mat,mat,'cosine'); % use 'euclidian' dist here if your features are normalised
 [~, initial_rank]=sort(orig_dist,2,'ascend'); 
-clear mat; clear queryset; clear testset; 
+%clear mat; clear queryset; clear testset; 
 
 switch method
     case 'rankdist'
-        clear orig_dist;
+        %clear orig_dist;
         r_dist= get_rank_dist(initial_rank,k);
     case 'origdist'
         r_dist=orig_dist;
-        clear orig_dist
+        %clear orig_dist
 end
 
-disp('ECN re-ranking ... prepared dist mats and rank lists.. commencing to match')
+%disp('ECN re-ranking ... prepared dist mats and rank lists.. commencing to match')
 
 %% ECN re-ranking %%
 top_t_nb=initial_rank(:,2:t+1);  % top neighbour indxs
@@ -56,14 +57,14 @@ next_2_tnbr=initial_rank(t_ind,2:q+1);   %   .. (t*ntest,lq2)
 
 q_ind=top_t_nb(1:nQuery,:).'; % query top t nbr
 next_2_qnbr=initial_rank(q_ind,2:q+1);   %    .. (t*nQuery,lq2)
-clear initial_rank;
+ %clear initial_rank;
 
 next_2_tnbr=reshape(next_2_tnbr',[t*q,ntest]);
 t_ind=[t_ind;next_2_tnbr];
-clear next_2_tnbr;
+ %clear next_2_tnbr;
 next_2_qnbr=reshape(next_2_qnbr',[t*q,nQuery]);
 q_ind=[q_ind;next_2_qnbr];
-clear next_2_qnbr;
+ %clear next_2_qnbr;
 
 t_nbr_dist=r_dist(t_ind,1:nQuery); % dist of test top nbrs wrt to query: size is [(t x testsize) , nQuery]
 t_nbr_dist=reshape(t_nbr_dist,[t+t*q,ntest,nQuery]);  %size. [:,:,nquery]
@@ -77,21 +78,35 @@ ECN_dist=squeeze(mean([q_nbr_dist;t_nbr_dist]));  %%%final ECN distance: average
 %uncomment this to get the rank dist ECN equation 4
 %rdist=r_dist(1:nQuery,nQuery+1:end);   % rank dist (query x test)
 
+ECN_dist=merge_dist(ECN_dist, orig_dist, nQuery);
+
+% Optional normlaise to 0-1
+%ECN_dist = min_max_norm(ECN_dist);
+
 %%
 function Rank_dist=get_rank_dist(initial_rank,k)
 [~,pos_L1]=sort(initial_rank, 2,'ascend'); 
-fac_1=sparse(max(0,(k+1- pos_L1)));
-Rank_dist = fac_1*fac_1';
-%convert the similarites to distance
- Rank_dist=min_max_norm(Rank_dist);
- Rank_dist=(1-Rank_dist) ;
+
+fac_1= sparse(max(0,(k+1- pos_L1)));
+Rank_dist = -full((fac_1*fac_1'));  % use -full() to skip norm and 1-R step
+end
+
+
+function d=merge_dist(ECN_dist, orig_dist, nQuery)
+ % just to keep the prig dist values where ecn has zeros   
+orig_dist=orig_dist(nQuery+1:end,1:nQuery);
+mask= ECN_dist ==0;
+d=ECN_dist + (mask.*orig_dist);
 end
 
 function [mat]=min_max_norm(mat)
-   max_mat=max(mat,[],2); min_mat=min(mat,[],2); % geting max and min 
-   mat= bsxfun(@minus,mat,min_mat); %subtract each row min from each row
-   max_min=max_mat-min_mat;
-   mat=bsxfun(@rdivide,mat,max_min);
+    min_mat = min(mat);
+    mat = (mat - min_mat)./ (max(mat)- min_mat);
+end
+%%
+function d= fast_euc_dist(A)
+s= sum(A.^2, 2);
+d= real(sqrt( bsxfun(@plus, s, s') - 2*(A*A')));
 end
 %%
 function ECN_param = parse_it()
