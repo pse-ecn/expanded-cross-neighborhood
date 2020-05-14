@@ -87,6 +87,7 @@ python3 evaluate_person_reid.py --querypath [path to query prediction folder ../
 OR
 
 from evaluate_person_reid import evaluate
+
 mAP, CMC= evaluate(querymat=queryset, testmat=testset, query_ids=query_labels, gallery_ids=test_labels,
             query_cams=query_cams_id, gallery_cams=test_cam_id, do_rerank=False)
 
