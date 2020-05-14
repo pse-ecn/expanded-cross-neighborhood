@@ -73,14 +73,14 @@ You can then run the evaluation by setting the evalPath to your download feature
 * In Python:
 From command  line
 ```
-python3 evaluate_person_reid --querypath [path to query prediction folder ../../query] --testpath [path to query prediction folder ../../test] 
+python3 evaluate_person_reid.py --querypath [path to query prediction folder ../../query] --testpath [path to query prediction folder ../../test] 
 
 ```
 
 ** or if you want to evalute with ECN reranking,  speciy with flag --do_rerank
 
 ```
-python3 evaluate_person_reid --querypath [path to query prediction folder ../../query] --testpath [path to query prediction folder ../../test] --do_rerank
+python3 evaluate_person_reid.py --querypath [path to query prediction folder ../../query] --testpath [path to query prediction folder ../../test] --do_rerank
 
 ```
 
