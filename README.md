@@ -71,15 +71,20 @@ You can then run the evaluation by setting the evalPath to your download feature
 If you would like to test our ECN reranking on your own features , you can directly use the [evalECNRerankingForFeatures](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/evalECNRerankingForFeatures.m) or directly the main [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m). 
 
 * In Python:
+
 From command  line
 ```
 python3 evaluate_person_reid --querypath [path to query prediction folder ../../query] --testpath [path to query prediction folder ../../test] 
 
+```
+
 or if you want to evalute with ECN reranking,  speciy with flag --do_rerank
 
+```
 python3 evaluate_person_reid --querypath [path to query prediction folder ../../query] --testpath [path to query prediction folder ../../test] --do_rerank
 
 ```
+
 OR
 
 from evaluate_person_reid import evaluate
