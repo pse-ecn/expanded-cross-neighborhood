@@ -68,17 +68,16 @@ https://drive.google.com/drive/folders/18eZlJIB5_WZ0tAa_SLbMJqxQS3C_76wh?usp=sha
 * In MATLAB 
 You can then run the evaluation by setting the evalPath to your download features folder in the function [evalECNRerankingForPath](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/evalECNRerankingForPath.m).
 
-If you would like to test our ECN reranking on your own features , you can directly use the [evalECNRerankingForFeatures](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/evalECNRerankingForFeatures.m) or directly the main [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m). 
+* If you would like to test our ECN reranking on your own features , you can directly use the [evalECNRerankingForFeatures](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/evalECNRerankingForFeatures.m) or directly the main [ECN_rerank](https://github.com/pse-ecn/expanded-cross-neighborhood/blob/master/ECN_rerank.m). 
 
 * In Python:
-
 From command  line
 ```
 python3 evaluate_person_reid --querypath [path to query prediction folder ../../query] --testpath [path to query prediction folder ../../test] 
 
 ```
 
-or if you want to evalute with ECN reranking,  speciy with flag --do_rerank
+* or if you want to evalute with ECN reranking,  speciy with flag --do_rerank
 
 ```
 python3 evaluate_person_reid --querypath [path to query prediction folder ../../query] --testpath [path to query prediction folder ../../test] --do_rerank
